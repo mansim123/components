@@ -10,8 +10,19 @@ const components = [
     description: 'Expandable/collapsible section',
     href: '/components/accordion',
   },
+  {
+    name: 'Login Form',
+    description: 'Description',
+    href: '/components/loginform',
+  },
+  {
+    name: 'Blog Card',
+    description: 'Description',
+    href: '/components/blogcard',
+  },
   // Add more as needed
 ]
+
 
 export default function Home() {
   return (
