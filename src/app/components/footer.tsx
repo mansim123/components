@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl w-full grid grid-cols-2 lg:grid-cols-5 gap-[4rem] lg:gap-6 m-auto items-start lg:justify-items-center">
         {/* Column 1: Logo and description */}
         <div className="flex flex-col gap-4">
-          <a href="/" className="text-xl font-bold">
+          <Link href="/" className="text-xl font-bold">
             <Image
               className="hidden dark:block"
               src="/Shinko_Footer_Logo_Dark.svg"
@@ -22,196 +23,63 @@ export default function Footer() {
               height={160}
               alt="Shinko Logo Light"
             />
-          </a>
+          </Link>
           <p className="poppins">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
             odio. Praesent libero. Sed cursus ante dapibus diam.
           </p>
-          <a href="#" className="poppins underline">
+          <Link href="#" className="poppins underline">
             Hello@shinkonymae.com
-          </a>
+          </Link>
         </div>
 
-        {/* Column 2: Header with list of links */}
-        <div className="flex flex-col gap-4 text-left">
-          <h2 className="font-bold poppins text-[1.1rem]">Services</h2>
-          <ul className="space-y-2">
-            <li>
-              <a href="#" className="poppins">
-                Icons
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Components
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Modules
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Mockups
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Templates
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Wallpapers
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Blog
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* Column 2: Services */}
+        <FooterColumn title="Services" items={["Icons", "Components", "Modules", "Mockups", "Templates", "Wallpapers", "Blog"]} />
 
-        {/* Column 3: Header with list of links */}
-        <div className="flex flex-col gap-4 text-left">
-          <h2 className="font-bold poppins text-[1.1rem]">Shinko Lab</h2>
-          <ul className="space-y-2">
-            <li>
-              <a href="#" className="poppins">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Privacy Policy
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Terms of Service
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Book a Call
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* Column 3: Shinko Lab */}
+        <FooterColumn title="Shinko Lab" items={["About", "Privacy Policy", "Terms of Service", "Book a Call"]} />
 
-        {/* Column 4: Header with list of links */}
-        <div className="flex flex-col gap-4 text-left">
-          <h2 className="font-bold poppins text-[1.1rem]">Community</h2>
-          <ul className="space-y-2">
-            <li>
-              <a href="#" className="poppins">
-                Work
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Dribble
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Behance
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Medium
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* Column 4: Community */}
+        <FooterColumn title="Community" items={["Work", "Dribble", "Behance", "Medium"]} />
 
-        {/* Column 5: Header with list of links */}
-        <div className="flex flex-col gap-4 text-left">
-          <h2 className="font-bold poppins text-[1.1rem]">Services</h2>
-          <ul className="space-y-2">
-            <li>
-              <a href="#" className="poppins">
-                Shinko Nyame Studio
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Web Design
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Web Development
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                Branding
-              </a>
-            </li>
-            <li>
-              <a href="#" className="poppins">
-                SEO
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* Column 5: Services */}
+        <FooterColumn title="Services" items={["Shinko Nyame Studio", "Web Design", "Web Development", "Branding", "SEO"]} />
       </div>
+
       <div className="max-w-7xl m-auto mt-12 text-left flex justify-between flex-col lg:flex-row">
         <p className="text-[#7A7A7A] text-[1rem]">
           All Icons and Digital Content copyright © Shinkō Nyame Studio 2025.
           Website build by Shinkō Nyame Studio.
         </p>
         <div className="flex gap-4 mt-6 md:mt-0 dark:hidden">
-          <Image
-            className=""
-            src="/instagram.svg"
-            width={25}
-            height={25}
-            alt="Shinko Logo Dark"
-          />
-          <Image
-            className=""
-            src="/facebook.svg"
-            width={25}
-            height={25}
-            alt="Shinko Logo Dark"
-          />
-          <Image
-            className=""
-            src="/x.svg"
-            width={25}
-            height={25}
-            alt="Shinko Logo Dark"
-          />
+          <Image src="/instagram.svg" width={25} height={25} alt="Instagram" />
+          <Image src="/facebook.svg" width={25} height={25} alt="Facebook" />
+          <Image src="/x.svg" width={25} height={25} alt="Twitter/X" />
         </div>
         <div className="hidden gap-4 mt-6 md:mt-0 dark:flex">
-          <Image
-            className=""
-            src="/instagram_dark.svg"
-            width={25}
-            height={25}
-            alt="Shinko Logo Dark"
-          />
-          <Image
-            className=""
-            src="/facebook_dark.svg"
-            width={25}
-            height={25}
-            alt="Shinko Logo Dark"
-          />
-          <Image
-            className=""
-            src="/x_dark.svg"
-            width={25}
-            height={25}
-            alt="Shinko Logo Dark"
-          />
+          <Image src="/instagram_dark.svg" width={25} height={25} alt="Instagram (dark)" />
+          <Image src="/facebook_dark.svg" width={25} height={25} alt="Facebook (dark)" />
+          <Image src="/x_dark.svg" width={25} height={25} alt="Twitter/X (dark)" />
         </div>
       </div>
     </section>
+  );
+}
+
+// Extracted reusable column component
+function FooterColumn({ title, items }: { title: string; items: string[] }) {
+  return (
+    <div className="flex flex-col gap-4 text-left">
+      <h2 className="font-bold poppins text-[1.1rem]">{title}</h2>
+      <ul className="space-y-2">
+        {items.map((item) => (
+          <li key={item}>
+            <Link href="#" className="poppins">
+              {item}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
